@@ -1,6 +1,6 @@
 issue_fields = {
-    "project": "SCG",
-    "summary": "test 99",
-    "description": "jira 2",
+    "project": "",
+    "summary": "",
+    "description": "",
     "issuetype": {"name": "Task"}
 }
