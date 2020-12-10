@@ -14,6 +14,6 @@ A program to create issues, update issue fields and delete issues from Jira usin
 
 - Setup api token
     - Need to create an api token to access the JIRA board.
-    - Go to [token manager](https://id.atlassian.com/manage-profile/security/api-tokens), to create and api token.
+    - Go to [token manager](https://id.atlassian.com/manage-profile/security/api-tokens), to create an api token.
     - Put the token in jira/main.py at Line 4.
 
