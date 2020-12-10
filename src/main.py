@@ -1,32 +1,20 @@
 from helper import JiraHelper
+from auth import user_name, api_token, server
+from fields import issue_fields
 
-user_name = ""
-api_token = ""
-server = "https://<your-domain>atlassian.net"
 jira = JiraHelper(user_name, api_token, server)
 
-# Data for Creating Issue
-test_data = {
-    "project": "project_name",
-    "summary": "test_summary",
-    "description": "test_description",
-    "issuetype": {"name": "Test"}
-}
-
 # Creating Test in Jira
-jira.create_issue(test_data)
-
-# Test Data for Updating Issue Fields
-updated_test_data = {
-    "summary": "test_summary",
-    "description": "test_description",
-}
+issue_key = jira.create_issue(issue_fields)
 
 # Updating Issue Fields in Jira
-jira.update_issue_fields("issue_key", updated_test_data)
+jira.update_issue_fields(issue_key, issue_fields)
+
+#To get an issue in Jira
+issue = jira.get_issue(issue_key)
+print(issue.fields.summary)
 
 # Deleting Issue in Jira
-jira.delete_issue("issue_key")
+jira.delete_issue(issue_key)
 
-issue = jira.get_issue("issue_key")
-print(issue.fields.summary)
+# jira.create_issues_from_file('jira/test-jira.xlsx')
